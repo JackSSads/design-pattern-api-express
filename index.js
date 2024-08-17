@@ -1,7 +1,5 @@
 const express = require("express");
 const app = express();
-const session = require("express-session");
-const FileStore = require("session-file-store")(session);
 require("dotenv").config();
 const PORT = process.env.PORT
 
@@ -12,7 +10,7 @@ const connection = require("./db/connection");
 //const { auth_router } = require("./routes");
 
 // import dos middleweres
-const { conf_cors, logger } = require("./middleweres");
+const { conf_cors, logger, conf_session } = require("./middleweres");
 
 // import logs de erros
 const errorHandler = require('./logs/errorHandle');
@@ -26,9 +24,10 @@ app.use(
 app.use(express.json());
 
 // Middleweres
-app.use(conf_cors);
 app.use(logger);
+app.use(conf_cors);
 app.use(errorHandler);
+app.use(conf_session);
 
 // endpoits
 //app.use("/auth", auth_router);
