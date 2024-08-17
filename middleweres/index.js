@@ -1,7 +1,7 @@
-const cors = require("./cors")
+const conf_cors = require("./cors")
 const logger = require("./logger")
 
 module.exports = {
-    cors,
+    conf_cors,
     logger
 };
