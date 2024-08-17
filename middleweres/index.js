@@ -1,7 +1,9 @@
-const conf_cors = require("./cors")
-const logger = require("./logger")
+const logger = require("./logger");
+const conf_cors = require("./cors");
+const conf_session = require("./sessions");
 
 module.exports = {
+    logger,
     conf_cors,
-    logger
+    conf_session
 };
