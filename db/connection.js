@@ -11,6 +11,7 @@ const connection = new Sequelize(
 
 try {
     connection.authenticate();
+    console.log("[RUNNING] - Conectado ao bando de dados.");
 } catch (error) {
     return new Error(`[ERROR] - ${error}`)
 };

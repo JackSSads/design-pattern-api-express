@@ -37,6 +37,6 @@ app.use(errorHandler);
 connection
     .sync()
     .then(() => {
-        app.listen(PORT, () => console.log("[RUNNING] - Conectado ao bando de dados."));
+        app.listen(PORT);
     })
     .catch((error) => console.log(error));
